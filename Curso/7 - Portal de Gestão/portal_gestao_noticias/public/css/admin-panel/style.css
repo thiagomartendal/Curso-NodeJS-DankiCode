@@ -1,0 +1,100 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header-panel {
+    background-color: #0aacdc;
+    width: 100%;
+    padding: 10px;
+    color: white;
+}
+
+form {
+    padding: 10px;
+    margin: 20px 0px;
+}
+
+form input {
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+form textarea {
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+form input[type="submit"] {
+    border: 1px solid #0aacdc;
+    background-color: #0aacdc;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+form input[type="submit"]:hover {
+    background-color: white;
+    color: #0aacdc;
+}
+
+form input[type="file"] {
+    border: unset;
+    padding: 1em;
+    margin-bottom: unset;
+    height: unset;
+}
+
+form input[type="file"]::file-selector-button {
+    border: 1px solid #0aacdc;
+    background-color: #0aacdc;
+    color: white;
+    font-weight: bold;
+    padding: 0.5em;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+form input[type="file"]::file-selector-button:hover {
+    background-color: white;
+    color: #0aacdc;
+}
+
+form fieldset {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+form fieldset legend {
+    font-size: 14px;
+}
+
+.news-single {
+    border-bottom: 2px dashed #ccc;
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-single a {
+    font-weight: bold;
+    text-decoration: none;
+    color: red;
+    transition: 0.5s;
+}
+
+.news-single a:hover {
+    opacity: 0.5;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('partials/head.html') %>
+    <body>
+        <%- include('partials/header.html') %>
+        <section class="headline">
+            <div class="center">
+                <div class="headline-img">
+                    <div class="headline-overlay"></div>
+                    <div class="headline-title">
+                        <a href="/<%= news[0].slug %>"><h2><%= news[0].title %></h2></a>
+                        <p>
+                            <%= news[0].description %>...
+                        </p>
+                    </div>
+                    <% if(news[0].image == "https://otempo.scene7.com/is/image/sempreeditora/mundo-papa-francisco-1745230109?qlt=90&wid=1200&ts=1745230190539&dpr=off") { %>
+                    <img src="<%= news[0].image %>" alt="Manchete" />
+                    <% } else { %>
+                    <img src="/news_images/<%= news[0].image %>" alt="Manchete" />
+                    <% } %>
+                </div>
+            </div>
+        </section>
+        <section class="other-news">
+            <div class="title">
+                <h2>Ultimas Notícias</h2>
+                <br />
+                <br />
+                <div class="center">
+                    <div class="latest">
+                        <% for(let i = 1; i < news.length; i++) { %>
+                        <div class="box-latest-single">
+                            <img src="/news_images/<%= news[i].image %>" alt="Notícia" />
+                            <div class="news-content">
+                                <h3><%= news[i].category %></h3>
+                                <h2><%= news[i].title %></h2>
+                                <p><%= news[i].description %>...</p>
+                                <a href="/<%= news[i].slug %>">Saiba Mais</a>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+                    <div class="most-read">
+                        <h3>Mais Lidas</h3>
+                        <div class="most-read-news">
+                            <% for(let i = 0; i < mostRead.length; i++) { %>
+                            <div class="most-read-news-single">
+                                <img src="/news_images/<%= mostRead[i].image %>" alt="Mais lida">
+                                <div class="text">
+                                    <h4><%= mostRead[i].title %></h4>
+                                    <p><%= mostRead[i].description %>...</p>
+                                    <a href="/<%= mostRead[i].slug %>">Saiba Mais</a>
+                                </div>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%- include('partials/footer.html') %>
+    </body>
+</html>

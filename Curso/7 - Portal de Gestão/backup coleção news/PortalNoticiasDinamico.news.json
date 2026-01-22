@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "67f5bcd440c37aa095cb8aa2"
+  },
+  "title": "Um belo dia de praia com muito sol",
+  "image": "praia.jpeg",
+  "category": "natureza",
+  "content": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque varius faucibus augue, eget egestas mauris volutpat nec. Vestibulum sit amet bibendum dui, nec bibendum eros.",
+  "author": "Um Autor",
+  "slug": "dia-de-praia",
+  "views": 0
+},
+{
+  "_id": {
+    "$oid": "67f5bd4840c37aa095cb8aa3"
+  },
+  "title": "Paisagens de Inverno",
+  "image": "pinheiros.jpeg",
+  "category": "natureza",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque varius faucibus augue, eget egestas mauris volutpat nec.",
+  "author": "Um Autor",
+  "slug": "neve",
+  "views": 0
+},
+{
+  "_id": {
+    "$oid": "67f5bd9740c37aa095cb8aa4"
+  },
+  "title": "Quer fugir das praias de verão?",
+  "image": "landscape.jpeg",
+  "category": "natureza",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque varius faucibus augue, eget egestas mauris volutpat nec. Vestibulum sit amet bibendum dui, nec bibendum eros. Aenean et euismod turpis, sed tincidunt metus. Donec sit amet fringilla magna. Sed efficitur diam et finibus lacinia. Quisque viverra pretium enim, nec efficitur nisl efficitur congue. Praesent hendrerit, orci ut volutpat sagittis, elit justo rutrum purus, sit amet pharetra diam nibh sit amet elit. Cras nulla enim, mattis ac sem eget, consectetur luctus sem.",
+  "author": "Um Autor",
+  "slug": "fuga-natureza",
+  "views": 1
+}]

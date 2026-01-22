@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Painel do Admin</title>
+        <link href="/public/css/admin-panel/style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header-panel">
+            <h2>Cadastro de Notícia</h2>
+        </div>
+        <form method="post" action="/admin/register" enctype="multipart/form-data">
+            <input type="text" name="news_title" placeholder="Título da Notícia" />
+            <!-- <input type="text" name="img_url" placeholder="Link da imagem da notícia" /> -->
+            <fieldset>
+                <legend>Imagem da Notícia</legend>
+                <input id="img-file" type="file" name="img_file" accept="image/*" />
+            </fieldset>
+            <input type="text" name="slug" placeholder="Slug" />
+            <textarea name="news" placeholder="Notícia"></textarea>
+            <input type="submit" value="Cadastrar Notícia" />
+        </form>
+        <div class="header-panel">
+            <h2>Listando Notícias</h2>
+        </div>
+        <% for(let i = 0; i < news.length; i++) { %>
+        <div class="news-single">
+            <p>Título da Notícia: <%= news[i].title %></p>
+            <a href="/admin/delete/<%= news[i].id %>" title="Excluir Notícia">(X)</a>
+        </div>
+        <% } %>
+    </body>
+</html>
