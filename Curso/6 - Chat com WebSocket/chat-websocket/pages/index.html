@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>
+            Chat Socket.IO
+        </title>
+        <link href="/public/css/style.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <ul id="messages"></ul>
+        <form id="form" action="">
+            <input id="input" autocomplete="off" />
+            <button>Enviar</button>
+        </form>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            let socket = io()
+            let name = prompt('Qual seu nome?')
+
+            let messages = document.getElementById('messages')
+            let form = document.getElementById('form')
+            let input = document.getElementById('input')
+
+            socket.emit('new user', name)
+
+            socket.on('new user', (data) => {
+                if (!data.success) {
+                    alert('Já existe usuário com este nome.');
+                    window.location.href= "/";
+                }
+            })
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault()
+                let value = input.value
+                if (value) {
+                    socket.emit('chat message', {msg: value, name: name})
+                    value = ''
+                    input.value = ''
+                }
+            })
+
+            socket.on('chat message', (obj) => {
+                let item = document.createElement('li')
+                item.textContent = obj.name+': '+obj.msg
+                if (obj.name == name)
+                    item.style.backgroundColor = 'gray'
+                messages.appendChild(item)
+                window.scrollTo(0, document.body.scrollHeight)
+            })
+        </script>
+    </body>
+</html>

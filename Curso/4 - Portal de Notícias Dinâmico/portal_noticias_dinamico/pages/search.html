@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('partials/head.html') %>
+    <body>
+        <%- include('partials/header.html') %>
+        <section class="other-news">
+            <div class="title">
+                <h2>Busca: <%= query %></h2>
+                <br />
+                <br />
+                <div class="center">
+                    <div class="most-read search-most-read">
+                        <h3><%= news.length %> resultados</h3>
+                        <div class="most-read-news">
+                            <% for(let i = 0; i < news.length; i++) { %>
+                            <div class="most-read-news-single">
+                                <img src="/news_images/<%= news[i].image %>" alt="Mais lida">
+                                <div class="text">
+                                    <h4><%= news[i].title %></h4>
+                                    <p><%= news[i].description %>...</p>
+                                    <a href="/<%= news[i].slug %>">Saiba Mais</a>
+                                </div>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%- include('partials/footer.html') %>
+    </body>
+</html>
